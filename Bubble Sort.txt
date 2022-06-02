@@ -1,0 +1,60 @@
+// Programa que indica qual é o maior double entre duas digitadas
+//Declarações do programa de linguagem de programação
+#include <iostream>
+#include <Windows.h>
+using namespace std;
+
+//Definições do programa
+#define PAUSA						system("pause")
+#define LIMPAR_TELA					system("cls")
+#define BRASIL						setlocale(LC_ALL,"portuguese_brazil")
+
+// FATEC - MC - JCB - 08/02/2017 - Versão 0.0
+
+#include "B2.h"
+
+//entry point do programa
+void main(void)
+{
+	//Declaração de variáveis
+	int v[3];
+	int qInt=3;
+	int k;
+	int aux;
+	int i;
+	int j;
+	k=qInt-1;
+
+	//Inserindo as variáveis no vetor
+	for(i=0;i<3;i++)
+	{
+		cout<<"Digite a "<<i+1<<" double: ";
+		cin>>v[i];
+		cout<<endl;
+	}
+
+	
+
+	//Ordenando as variáveis no vetor
+	for(i=0;i<qInt;i++)
+	{
+		for(j=0;j<k;j++)
+		{
+			if(v[j]>v[j+1])
+			{
+				aux=v[j];
+				v[j]=v[j+1];
+				v[j+1]=aux;
+			}
+		}
+		k--;
+	}
+
+	//Exibindo o vetor ordenado
+	for(i=0;i<3;i++)
+	{
+		cout<<v[i]<<" ";
+	}
+
+	PAUSA;
+}
